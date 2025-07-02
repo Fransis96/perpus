@@ -74,7 +74,9 @@ $buku = mysqli_query($conn, $query);
         <?php while ($row = mysqli_fetch_assoc($buku)) : ?>
             <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
                 <div class="card book-card h-100">
+                    <a href="../assets/img/<?= $row['gambar']; ?>">
                     <img src="../assets/img/<?= $row['gambar']; ?>" class="card-img-top book-img" alt="<?= htmlspecialchars($row['judul']); ?>">
+                    </a>
                     <div class="card-body d-flex flex-column">
                         <h6 class="card-title"><?= htmlspecialchars($row['judul']); ?></h6>
                         <p class="text-muted mb-1"><i class="bi bi-person-fill"></i> <?= htmlspecialchars($row['penulis']); ?></p>

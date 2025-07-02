@@ -2,6 +2,9 @@
 session_start();
 require '../config/koneksi.php';
 
+date_default_timezone_set('Asia/Jakarta');
+$jam = date("H:i:s");
+
 if (!isset($_SESSION['role']) || $_SESSION['role'] != 'user') {
     header("Location: ../auth/login.php");
     exit;
@@ -54,7 +57,7 @@ $peminjaman = mysqli_query($conn, "
                     <?php while ($row = mysqli_fetch_assoc($peminjaman)) : ?>
                         <tr>
                             <td><?= htmlspecialchars($row['judul']); ?></td>
-                            <td class="text-center"><?= $row['tgl_pinjam']; ?></td>
+                            <td class="text-center"><?= $row['tgl_pinjam']; ?> / <?="$jam"?></td>
                             <td class="text-center">
                                 <form method="post" action="../proses/proses_kembali.php" class="d-inline">
                                     <input type="hidden" name="id_peminjaman" value="<?= $row['id_peminjaman']; ?>">

@@ -64,8 +64,9 @@ if (isset($_POST['login'])) {
         <div class="card shadow-sm">
             <div class="card-body">
                 <div class="text-center mb-3">
-                    <i class="bi bi-person-circle text-primary"></i>
-                    <h5 class="mt-2 mb-3">Login</h5>
+                    <img src="../assets/img/logo.png" alt="Logo" class="img-fluid mb-2" style="max-width: 100px;">
+                    <!-- <i class="bi bi-person-circle text-primary"></i> -->
+                    <h5 class="mt-2 mb-3" style="color: navy;">Login</h5>
                 </div>
 
                 <?php if (isset($error)) : ?>

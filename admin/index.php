@@ -53,3 +53,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
     </div>
 </body>
 </html>
+
+<?php 
+
+echo date("Y-m-d");
+ ?>

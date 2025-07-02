@@ -13,6 +13,6 @@ if (isset($_SESSION['role'])) {
 }
 
 // Jika belum login, arahkan ke login
-header("Location: auth/login.php");
+header("Location: auth/dashboard.php");
 exit;
 

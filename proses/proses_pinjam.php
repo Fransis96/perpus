@@ -19,7 +19,7 @@ if (isset($_POST['pinjam'])) {
     if ($data && $data['stok'] > 0) {
         // Tambah peminjaman dengan status langsung 'dipinjam'
         mysqli_query($conn, "INSERT INTO peminjaman (id_buku, id_users, tgl_pinjam, status) 
-                             VALUES ($id_buku, $id_users, '$tgl_pinjam', 'dipinjam')");
+                             VALUES ($id_buku, $id_users, CURDATE(), 'dipinjam')");
 
         // Kurangi stok
         mysqli_query($conn, "UPDATE books SET stok = stok - 1 WHERE id_buku = $id_buku");
